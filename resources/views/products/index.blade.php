@@ -10,9 +10,19 @@
         <div class="col-9">
             <div class="container">
                 @if ($category !== null)
-                        <a href="/">トップ</a> > <a href="#">{{ $category->major_category_name }}</a> > {{ $category->name }}
-                        <h1>{{ $category->name }}の商品一覧{{$products->count()}}件</h1>
-                    @endif
+                    <a href="/">トップ</a> > <a href="#">{{ $category->major_category_name }}</a> > {{ $category->name }}
+                    <h1>{{ $category->name }}の商品一覧{{$products->count()}}件</h1>
+
+                    <form method="GET" action="{{ route('products.index')}}" class="form-inline">
+                        <input type="hidden" name="category" value="{{ $category->id }}">
+                        並び替え
+                        <select name="sort" onChange="this.form.submit();" class="form-inline ml-2">
+                            @foreach ($sort as $key => $value)
+                                <option value=" {{ $value}}">{{ $key }}</option>
+                            @endforeach
+                        </select>
+                    </form>
+                @endif
             </div>
             <div class="container mt-4">
                 <div class="row w-100">

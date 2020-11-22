@@ -3,13 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
 
 class Product extends Model
 {
-    use Favoriteable;
+    use Favoriteable, Sortable;
 
     protected $guarded = [];
+
+    public $sortable = [
+        'price',
+        'updated_at'
+    ];
 
     public function category()
     {
