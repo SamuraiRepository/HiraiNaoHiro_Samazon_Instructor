@@ -1,3 +1,4 @@
+/** Common **/
 @font-face {
     font-family: YuGo;
     src: local(YuGo-Medium),
@@ -116,8 +117,8 @@ label {
 .samazon-header-shoppingcart-icon {
     color: #ffffff;
 }
-/** End of Header **/
 
+/** Auth **/
 .samazon-login-input {
     border-radius: 2px;
     border: solid 1px #b2b2b2;
@@ -176,3 +177,16 @@ label {
 }
 
 
+/** Sidebar **/
+.samazon-sidebar-category-label {
+    width: 156px;
+    height: 20px;
+    font-family: YuGo;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #191919;
+}
