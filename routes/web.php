@@ -25,6 +25,6 @@ Route::get('products/{product}/favorite', 'ProductController@favorite')->name('p
 
 Route::resource('products', 'ProductController');
 
-Auth::routes(['verify' => true ]);
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
