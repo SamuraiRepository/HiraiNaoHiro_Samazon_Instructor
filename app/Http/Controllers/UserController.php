@@ -66,11 +66,12 @@ class UserController extends Controller
     {
         $user = Auth::user();
 
-        if ($request->input('password') == $request->input('confirm_password')) {
+
+        if ($request->input('password') == $request->input('password_confirmation')) {
             $user->password = bcrypt($request->input('password'));
             $user->update();
         } else {
-                return redirect()->route('mypage.edit_password');
+            return redirect()->route('mypage.edit_password');
         }
 
         return redirect()->route('mypage');
